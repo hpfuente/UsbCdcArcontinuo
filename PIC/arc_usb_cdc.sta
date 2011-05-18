@@ -1,103 +1,103 @@
 
-ROM used: 4194 (13%)
-          4194 (13%) including unused fragments
+ROM used: 5482 (17%)
+          5482 (17%) including unused fragments
 
           1 Average locations per line
-          5 Average locations per statement
+          7 Average locations per statement
 
-RAM used: 1163 (57%) at main() level
-          1203 (59%) worst case
+RAM used: 1579 (77%) at main() level
+          1619 (79%) worst case
 
 Stack used: 12 worst case (out of 24 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   99    43   5  arc_usb_cdc.c
+   94    52   6  arc_usb_cdc.c
   429     0   0  C:\Program Files\PICC\devices\18F4550.h
   526   114  14  include\usb_cdc.h
- 1304   321  41  C:\Program Files\PICC\Drivers\pic18_usb.h
+ 1304   321  40  C:\Program Files\PICC\Drivers\pic18_usb.h
   828     0   0  C:\Program Files\PICC\Drivers\usb.h
   241     0   0  include\arc_usb_cdc.h
   912   229  29  C:\Program Files\PICC\Drivers\usb.c
    28    85  11  C:\Program Files\PICC\Drivers\ctype.h
 ----- -----
- 4367   792 Total
+ 4362   801 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     32   0   0             @const141
 0     32   0   0             @const143
-0     48   1   0             @const145
+0     48   0   0             @const145
 0     66   1   0             @const147
-0     40   0   1   149  2.6  usb_detach
+0     44   0   1   149  2.6  usb_detach
 0     34   0   0   138  2.1  usb_attach
 0     36   0   1   346  4.6  usb_task
-0    222   3   7  1224  5.9  usb_flush_in
-0    166   2  14   584  7.5  usb_put_packet
-0    230   3   7   940  5.4  usb_flush_out
-0     40   0   1    52  2.1  usb_rx_packet_size
-0     68   1   4   235  4.5  usb_stall_ep
-0     66   1   4   242  4.6  usb_unstall_ep
-0     84   1   3   343  5.8  usb_endpoint_stalled
-0     22   0   1    88  2.7  usb_set_address
-0    402   5  10  1575  8.9  usb_set_configured
+0    226   2   7  1224  5.9  usb_flush_in
+0    174   2  14   584  7.5  usb_put_packet
+0    238   2   7   940  5.4  usb_flush_out
+0     44   0   1    52  2.1  usb_rx_packet_size
+0     72   1   4   235  4.5  usb_stall_ep
+0     70   1   4   242  4.6  usb_unstall_ep
+0     88   1   3   343  5.8  usb_endpoint_stalled
+0     26   0   1    88  2.7  usb_set_address
+0    434   4  10  1575  8.9  usb_set_configured
 0    106   1   0   448  3.7  usb_isr
 0      6   0   0    25  1.2  usb_isr_sof
-0     44   1   3   142  3.9  usb_disable_endpoints
-0     42   1   0   318  4.6  usb_isr_rst
+0     48   0   3   142  3.9  usb_disable_endpoints
+0     42   0   0   318  4.6  usb_isr_rst
 0     30   0   0   343  3.1  usb_init_ep0_setup
 0      8   0   0    47  1.5  usb_isr_uerr
 0     10   0   0    54  1.5  usb_isr_uidle
 0     10   0   0    54  1.5  usb_isr_activity
 0     14   0   0   147  3.4  usb_isr_stall
-0    202   2   2  1217  7.3  usb_isr_tok_dne
+0    240   2   2  1217  7.3  usb_isr_tok_dne
 0      6   0   1    25  1.6  usb_request_send_response
 0      6   0   0    22  1.2  usb_request_get_data
 0      6   0   0    25  0.8  usb_request_stall
 0     84   1   0             @const268
 0     18   0   0             @const270
 0     34   0   0             @const276
-0     50   1   0             @const279
-0     40   0   3   239  4.0  usb_token_reset
-0     78   1   4   201  4.9  usb_endpoint_is_valid
-0     34   0   1   204  3.1  usb_isr_tok_in_dne
-0     50   1   1   152  3.0  usb_isr_tok_out_dne
-0     42   1   0   310  5.4  usb_isr_tok_setup_dne
-0    162   2   0  1131  8.2  usb_isr_tkn_setup_StandardDevice
-0    150   2   3   691  7.7  usb_isr_tkn_setup_StandardInterface
-0     96   1   0   519  5.2  usb_isr_tkn_setup_StandardEndpoint
-0    118   1   1   618  7.2  usb_Get_Descriptor
+0     50   0   0             @const279
+0     44   0   3   239  4.0  usb_token_reset
+0     90   1   4   201  4.9  usb_endpoint_is_valid
+0     50   0   1   204  3.1  usb_isr_tok_in_dne
+0     62   1   1   152  3.0  usb_isr_tok_out_dne
+0     42   0   0   310  5.4  usb_isr_tok_setup_dne
+0    180   2   0  1131  8.2  usb_isr_tkn_setup_StandardDevice
+0    168   2   3   691  7.7  usb_isr_tkn_setup_StandardInterface
+0    106   1   0   519  5.2  usb_isr_tkn_setup_StandardEndpoint
+0    122   1   1   618  7.2  usb_Get_Descriptor
 0     14   0   0    76  1.8  usb_finish_set_address
-0    132   2   5   554  8.5  usb_copy_desc_seg_to_ep
-0     92   1   0   364  5.6  usb_isr_tok_out_cdc_control_dne
-0    162   2   0   840  7.7  usb_isr_tkn_cdc
-0     18   0   0   112  2.2  usb_isr_tok_out_cdc_data_dne
+0    152   1   5   554  8.5  usb_copy_desc_seg_to_ep
+0    100   1   0   364  5.6  usb_isr_tok_out_cdc_control_dne
+0    174   2   0   840  7.7  usb_isr_tkn_cdc
+0     22   0   0   112  2.2  usb_isr_tok_out_cdc_data_dne
 0     14   0   0    59  2.1  usb_isr_tok_in_cdc_data_dne
-0     32   0   0   106  2.5  usb_cdc_flush_out_buffer
+0     36   0   0   106  2.5  usb_cdc_flush_out_buffer
 0     36   0   0   280  2.3  usb_cdc_init
-0     62   1   2   251  5.9  usb_cdc_getc
-0     66   1   5   223  4.1  usb_cdc_putc_fast
+0     74   1   2   251  5.9  usb_cdc_getc
+0     74   1   5   223  4.1  usb_cdc_putc_fast
 0     34   0   1   112  1.3  usb_cdc_putc
-0    344   4   1  1194  5.8  MAIN
+0   1352  12   2  1675  6.4  MAIN
 
 Program metrics:
     Functions               46
-    Statements              792
-    Comments                2523
-    Volume (V)              32244
-    Difficilty (D)          195.1
-    Effort to implement (E) 6291371
-    Time to implement (T)   97 hours, 5 minutes
-    Est Delivered Bugs (B)  11
-    Cyclomatic Complexity   124
-    Maintainability (MI)    46
+    Statements              801
+    Comments                2515
+    Volume (V)              32958
+    Difficilty (D)          195.9
+    Effort to implement (E) 6456132
+    Time to implement (T)   99 hours, 38 minutes
+    Est Delivered Bugs (B)  12
+    Cyclomatic Complexity   126
+    Maintainability (MI)    45
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-0009C   150  0  
-0009E-07FFE  4040  28570  
+0009E-07FFE  5328  27282  
 
 
 

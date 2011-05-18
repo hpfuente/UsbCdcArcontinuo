@@ -42,8 +42,8 @@ AdditionalOptionString=
 [Windows]
 0=0000 %S 0 0 796 451 3 0
 [Opened Files]
-1=E:\My Documents\PUC\arcontinuo\PIC\CdcUSB\PIC\arc_usb_cdc.c
-2=E:\My Documents\PUC\arcontinuo\PIC\CdcUSB\PIC\include\usb_cdc.h
+1=arc_usb_cdc.c
+2=
 3=E:\My Documents\PUC\arcontinuo\PIC\pruebas matlab\pic test\PicUSB.c
 4=
 [Units]

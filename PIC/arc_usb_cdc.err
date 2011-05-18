@@ -1,9 +1,7 @@
 >>> Warning 203 "C:\Program Files\PICC\Drivers\pic18_usb.h" Line 504(1,1): Condition always TRUE
->>> Warning 216 "arc_usb_cdc.c" Line 100(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
->>> Warning 216 "arc_usb_cdc.c" Line 100(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
->>> Warning 216 "arc_usb_cdc.c" Line 100(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_cdc_flush_out_buffer)
->>> Warning 202 "E:\My Documents\PUC\arcontinuo\PIC\CdcUSB\PIC\include\arc_usb_cdc.h" Line 154(16,37): Variable never used:   USB_CLASS_DESCRIPTORS
->>> Warning 202 "arc_usb_cdc.c" Line 25(16,17): Variable never used:   k
->>> Warning 202 "arc_usb_cdc.c" Line 26(16,23): Variable never used:   counter
-      Memory usage:   ROM=13%      RAM=57% - 59%
-      0 Errors,  7 Warnings.
+>>> Warning 216 "arc_usb_cdc.c" Line 95(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "arc_usb_cdc.c" Line 95(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "arc_usb_cdc.c" Line 95(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_cdc_flush_out_buffer)
+>>> Warning 202 "E:\My Documents\PUC\arcontinuo\PIC\CdcUsbArcontinuo\PIC\include\arc_usb_cdc.h" Line 154(16,37): Variable never used:   USB_CLASS_DESCRIPTORS
+      Memory usage:   ROM=17%      RAM=77% - 79%
+      0 Errors,  5 Warnings.

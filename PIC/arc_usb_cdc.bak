@@ -23,16 +23,18 @@ unsigned int8  an4=0;
 unsigned int8  i=0;
 unsigned int8  j=0;
 unsigned int16 k=0;
-unsigned int8  counter=255;
+unsigned int8  image[416]={0};               
 
 void main()
 { 
-
    set_tris_d(0x00); 
    set_tris_e(0x00); //salidas mux
    set_tris_b(0x00); //salidas demux
    
    output_D(0x00);
+
+   for(k=0;k<416;k++) image[k]=k/416*255;
+
 
    setup_adc (adc_clock_div_32); 
    setup_adc_ports (AN0_TO_AN3);
@@ -40,58 +42,51 @@ void main()
    usb_init_cs();
    do 
    { 
-      //output_toggle(PIN_D0);
       usb_task();
       if (usb_enumerated()) 
-      { 
-         output_toggle(PIN_D2);
-      
+      {       
          if (usb_cdc_kbhit()) 
          { 
             i = toupper(usb_cdc_getc()); 
             if(i=='S')
             {
+               output_high(PIN_D7);
                usb_cdc_putc(255);
-               counter=0;
-               for(k=0;k<416;k++)
-               {
-                  if(counter>240)counter=240;
-                  usb_cdc_putc(counter);
-                  counter++;
-               }
+               for(k=0;k<416;k++) usb_cdc_putc(image[k]);
                usb_cdc_putc(254);
-//!               
-//!               for(i=0;i<13;i++)
-//!               {
-//!                  for(j=0;j<8;j++)
-//!                  {
-//!                     output_d(i);
-//!                     output_b(i);   //direccion demux
-//!                     output_e(j);   //direccion mux
-//!                     
-//!                     set_adc_channel (3);
-//!                     delay_us(20);
-//!                     an4=read_adc();
-//!                     usb_cdc_putc(an4);
-//!                     
-//!                     set_adc_channel (2);
-//!                     delay_us(20);
-//!                     an3=read_adc();
-//!                     usb_cdc_putc(an3);
-//!                     
-//!                     set_adc_channel (1);
-//!                     delay_us(20);
-//!                     an2=read_adc();
-//!                     usb_cdc_putc(an2);
-//!                                   
-//!                     set_adc_channel (0);
-//!                     delay_us(20);
-//!                     an1=read_adc();
-//!                     usb_cdc_putc(an1);
-//!                     
-//!                  }//for(j)
-//!               }//for(i)
-            }//if(i==S)            
+               k=0;
+               for(i=0;i<13;i++)
+               {
+                  for(j=0;j<8;j++)
+                  {
+                     output_b(i);   //direccion demux
+                     output_e(j);   //direccion mux
+                     
+                     set_adc_channel (3);
+                     delay_us(20);
+                     an4=read_adc();
+                     image[k]=an4;
+                     k++;
+                     set_adc_channel (2);
+                     delay_us(20);
+                     an3=read_adc();
+                     image[k]=an3;
+                     k++;
+                     set_adc_channel (1);
+                     delay_us(20);
+                     an2=read_adc();
+                     image[k]=an2;
+                     k++;              
+                     set_adc_channel (0);
+                     delay_us(20);
+                     an1=read_adc();
+                     image[k]=an1;
+                     k++;
+                     
+                  }//for(j)
+               }//for(i) 
+               output_low(PIN_D7);
+            }//if(i==S)
          }//if (usb_cdc_kbhit()) 
       }//if (usb_enumerated()) 
    } while (TRUE); 
